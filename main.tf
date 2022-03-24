@@ -3,10 +3,11 @@ provider "aws" {
 }
 
 resource "aws_ami" "awsAmiEncrypted" {
-  name                = "some-name"
+  name = "some-name"
 
   ebs_block_device {
     device_name = "dev-name"
-    encrypted = var.enc
+    encrypted   = var.enc
   }
+  encrypted = true
 }
